@@ -35,59 +35,35 @@
 }
 
 :root {
-  --background: 36 24% 95%;
-  --foreground: 210 19% 17%;
-  --border: 35 14% 83%;
-  --input: 35 14% 83%;
-  --ring: 20 89% 54%;
-  --card: 36 26% 97%;
-  --card-foreground: 210 19% 17%;
-  --card-border: 35 14% 83%;
-  --popover: 36 26% 97%;
-  --popover-foreground: 210 19% 17%;
-  --popover-border: 35 14% 83%;
-  --primary: 20 89% 54%;
-  --primary-foreground: 36 24% 95%;
-  --secondary: 210 19% 17%;
-  --secondary-foreground: 36 24% 95%;
-  --muted: 35 18% 89%;
-  --muted-foreground: 210 10% 44%;
-  --accent: 31 92% 63%;
-  --accent-foreground: 210 19% 17%;
+  --background: 40 20% 98%;
+  --foreground: 213 21% 18%;
+  --border: 210 13% 86%;
+  --input: 210 13% 86%;
+  --ring: 20 93% 52%;
+  --card: 40 20% 98%;
+  --card-foreground: 213 21% 18%;
+  --card-border: 210 13% 86%;
+  --popover: 40 20% 98%;
+  --popover-foreground: 213 21% 18%;
+  --popover-border: 210 13% 86%;
+  --primary: 20 93% 52%;
+  --primary-foreground: 40 20% 98%;
+  --secondary: 213 21% 18%;
+  --secondary-foreground: 40 20% 98%;
+  --secondary-border: hsl(var(--secondary));
+  --muted: 210 17% 94%;
+  --muted-foreground: 213 9% 43%;
+  --accent: 20 93% 52%;
+  --accent-foreground: 213 21% 18%;
   --destructive: 0 70% 46%;
-  --destructive-foreground: 36 24% 95%;
+  --destructive-foreground: 40 20% 98%;
   --app-font-sans: 'Manrope', sans-serif;
   --app-font-mono: 'DM Mono', monospace;
-  --radius: 0.5rem;
+  --radius: 0.25rem;
   --primary-border: hsl(var(--primary));
-  --secondary-border: hsl(var(--secondary));
   --muted-border: hsl(var(--muted));
   --accent-border: hsl(var(--accent));
   --destructive-border: hsl(var(--destructive));
-}
-
-.dark {
-  --background: 210 19% 17%;
-  --foreground: 36 24% 95%;
-  --border: 210 13% 31%;
-  --input: 210 13% 31%;
-  --ring: 20 89% 54%;
-  --card: 210 17% 21%;
-  --card-foreground: 36 24% 95%;
-  --card-border: 210 13% 31%;
-  --popover: 210 17% 21%;
-  --popover-foreground: 36 24% 95%;
-  --popover-border: 210 13% 31%;
-  --primary: 20 89% 54%;
-  --primary-foreground: 36 24% 95%;
-  --secondary: 36 24% 95%;
-  --secondary-foreground: 210 19% 17%;
-  --muted: 210 14% 26%;
-  --muted-foreground: 35 10% 71%;
-  --accent: 31 92% 63%;
-  --accent-foreground: 210 19% 17%;
-  --destructive: 0 70% 46%;
-  --destructive-foreground: 36 24% 95%;
 }
 
 @layer base {
@@ -104,9 +80,9 @@
 .site-shell { min-height: 100dvh; overflow: clip; }
 .display-font { font-family: 'Space Grotesk', sans-serif; }
 .mono-font { font-family: 'DM Mono', monospace; }
-.eyebrow { color: hsl(var(--primary)); font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; }
-.page-wrap { width: min(100% - 2.5rem, 1280px); margin-inline: auto; }
-.grid-lines { background-image: linear-gradient(to right, rgba(29,37,45,.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(29,37,45,.055) 1px, transparent 1px); background-size: 72px 72px; }
+.eyebrow { color: hsl(var(--primary)); font-family: 'DM Mono', monospace; font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.page-wrap { width: min(100% - 3rem, 1240px); margin-inline: auto; }
+.soft-grid { background-image: linear-gradient(to right, rgba(31,42,52,.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(31,42,52,.045) 1px, transparent 1px); background-size: 80px 80px; }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: .1s; }
@@ -116,20 +92,27 @@
 .image-reveal img { transform: scale(1.08); transition: transform 1.2s cubic-bezier(.2,.75,.2,1); }
 .image-reveal.is-visible img { transform: scale(1); }
 .arrow-link svg { transition: transform .25s ease; }
-.arrow-link:hover svg { transform: translateX(5px); }
+.arrow-link:hover svg { transform: translate(4px,-4px); }
 .hero-image { animation: hero-settle 1.35s cubic-bezier(.2,.75,.2,1) both; }
 @keyframes hero-settle { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
-.nav-glass { background: rgba(243,240,235,.9); backdrop-filter: blur(16px); }
-.dark-panel { background: #1d252d; color: #f3f0eb; }
-.orange-rule { width: 48px; height: 3px; background: hsl(var(--primary)); }
-.service-card:hover .service-image img { transform: scale(1.045); }
+.nav-glass { background: rgba(255,255,255,.92); backdrop-filter: blur(18px); }
+.dark-panel { background: #202b34; color: #f8f7f3; }
+.orange-rule { width: 42px; height: 2px; background: hsl(var(--primary)); }
+.service-card:hover .service-image img { transform: scale(1.04); }
 .service-image img { transition: transform .6s ease; }
-.service-card:hover .service-arrow { transform: translate(3px,-3px); background: hsl(var(--primary)); color: #f3f0eb; }
 .service-arrow { transition: transform .25s ease, background-color .25s ease, color .25s ease; }
+.service-card:hover .service-arrow { transform: translate(3px,-3px); background: hsl(var(--primary)); color: #fff; }
 .field-error { color: hsl(var(--destructive)); font-size: .74rem; margin-top: .4rem; }
+.form-field { border-bottom: 1px solid #c9d0d4; background: transparent; transition: border-color .25s ease; }
+.form-field:focus { border-color: hsl(var(--primary)); }
+.contact-choice { border: 1px solid #d8dee1; background: #fff; transition: border-color .25s ease, background-color .25s ease; }
+.contact-choice:has(input:checked) { border-color: hsl(var(--primary)); background: #fff8f3; }
+.catalogue-row { border-top: 1px solid #d8dee1; transition: background-color .25s ease; }
+.catalogue-row:last-child { border-bottom: 1px solid #d8dee1; }
+.catalogue-row:hover { background: #fff8f3; }
 @media (max-width: 767px) {
-  .page-wrap { width: min(100% - 2rem, 1280px); }
-  .grid-lines { background-size: 42px 42px; }
+  .page-wrap { width: min(100% - 2rem, 1240px); }
+  .soft-grid { background-size: 42px 42px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
