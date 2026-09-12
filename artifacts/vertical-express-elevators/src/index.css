@@ -35,26 +35,26 @@
 }
 
 :root {
-  --background: 40 20% 98%;
-  --foreground: 213 21% 18%;
-  --border: 210 13% 86%;
-  --input: 210 13% 86%;
-  --ring: 20 93% 52%;
-  --card: 40 20% 98%;
-  --card-foreground: 213 21% 18%;
-  --card-border: 210 13% 86%;
-  --popover: 40 20% 98%;
-  --popover-foreground: 213 21% 18%;
-  --popover-border: 210 13% 86%;
-  --primary: 20 93% 52%;
-  --primary-foreground: 40 20% 98%;
-  --secondary: 213 21% 18%;
-  --secondary-foreground: 40 20% 98%;
+  --background: 34 55% 90%;
+  --foreground: 0 0% 17%;
+  --border: 30 20% 72%;
+  --input: 30 20% 72%;
+  --ring: 25 65% 52%;
+  --card: 35 60% 94%;
+  --card-foreground: 0 0% 17%;
+  --card-border: 30 20% 72%;
+  --popover: 35 60% 94%;
+  --popover-foreground: 0 0% 17%;
+  --popover-border: 30 20% 72%;
+  --primary: 25 65% 52%;
+  --primary-foreground: 35 60% 94%;
+  --secondary: 0 0% 17%;
+  --secondary-foreground: 35 60% 94%;
   --secondary-border: hsl(var(--secondary));
-  --muted: 210 17% 94%;
-  --muted-foreground: 213 9% 43%;
-  --accent: 20 93% 52%;
-  --accent-foreground: 213 21% 18%;
+  --muted: 30 10% 68%;
+  --muted-foreground: 0 0% 28%;
+  --accent: 27 100% 62%;
+  --accent-foreground: 0 0% 17%;
   --destructive: 0 70% 46%;
   --destructive-foreground: 40 20% 98%;
   --app-font-sans: 'Manrope', sans-serif;
@@ -95,9 +95,9 @@
 .arrow-link:hover svg { transform: translate(4px,-4px); }
 .hero-image { animation: hero-settle 1.35s cubic-bezier(.2,.75,.2,1) both; }
 @keyframes hero-settle { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
-.nav-glass { background: rgba(255,255,255,.92); backdrop-filter: blur(18px); }
-.dark-panel { background: #202b34; color: #f8f7f3; }
-.orange-rule { width: 42px; height: 2px; background: hsl(var(--primary)); }
+.nav-glass { background: rgba(245,231,214,.96); backdrop-filter: blur(18px); }
+.dark-panel { background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%); color: #f5e7d6; }
+.orange-rule { width: 42px; height: 2px; background: #ff8a3d; }
 .service-card:hover .service-image img { transform: scale(1.04); }
 .service-image img { transition: transform .6s ease; }
 .service-arrow { transition: transform .25s ease, background-color .25s ease, color .25s ease; }
@@ -105,11 +105,23 @@
 .field-error { color: hsl(var(--destructive)); font-size: .74rem; margin-top: .4rem; }
 .form-field { border-bottom: 1px solid #c9d0d4; background: transparent; transition: border-color .25s ease; }
 .form-field:focus { border-color: hsl(var(--primary)); }
-.contact-choice { border: 1px solid #d8dee1; background: #fff; transition: border-color .25s ease, background-color .25s ease; }
-.contact-choice:has(input:checked) { border-color: hsl(var(--primary)); background: #fff8f3; }
-.catalogue-row { border-top: 1px solid #d8dee1; transition: background-color .25s ease; }
-.catalogue-row:last-child { border-bottom: 1px solid #d8dee1; }
-.catalogue-row:hover { background: #fff8f3; }
+.contact-choice { border: 1px solid #b7a28e; background: #f5e7d6; transition: border-color .25s ease, background-color .25s ease; }
+.contact-choice:has(input:checked) { border-color: #ff8a3d; background: #f0c39a; }
+.catalogue-row { border-top: 1px solid #b7a28e; transition: background-color .25s ease; }
+.catalogue-row:last-child { border-bottom: 1px solid #b7a28e; }
+.catalogue-row:hover { background: #f0c39a; }
+
+/* Brand translation layer for the existing layouts. */
+[class~="bg-[#f8f7f3]"] { background-color: #f5e7d6 !important; }
+[class~="bg-[#eef1f2]"] { background-color: #e1ded8 !important; }
+[class~="bg-white"] { background-color: #fffaf2 !important; }
+[class~="bg-[#202b34]"] { background-color: #2b2b2b !important; }
+[class~="text-[#202b34]"] { color: #2b2b2b !important; }
+[class~="text-[#647178]"], [class~="text-[#667279]"], [class~="text-[#6d777d]"] { color: #474747 !important; }
+[class~="text-[#f4511e]"], [class~="border-[#f4511e]"] { color: #d8783a !important; border-color: #d8783a !important; }
+[class~="bg-[#f4511e]"] { background-color: #d8783a !important; }
+[class~="border-[#d3dade]"], [class~="border-[#e2e6e8]"], [class~="border-[#cfd6da]"] { border-color: #b7a28e !important; }
+[class~="border-[#d8dee1]"], [class~="border-[#c5cfd4]"] { border-color: #b7a28e !important; }
 @media (max-width: 767px) {
   .page-wrap { width: min(100% - 2rem, 1240px); }
   .soft-grid { background-size: 42px 42px; }

@@ -22,7 +22,7 @@ export function HomePage() {
               <div className="absolute -bottom-5 -left-5 hidden h-24 w-24 border-l border-b border-[#f4511e] md:block" />
               <div className="relative overflow-hidden bg-[#e8ecee] p-3 md:p-5">
                 <img src={`${imageBase}IMG-20260912-WA0011_1789155975552.jpg`} alt="Vertical Express Elevators elevator installation" className="hero-image aspect-[1.06] h-full w-full object-cover object-center" />
-                <div className="absolute bottom-7 left-7 bg-white/90 px-4 py-3 backdrop-blur-sm"><p className="mono-font text-[9px] uppercase tracking-[.14em] text-[#202b34]">Ascend Beyond Limits...</p></div>
+                <div className="absolute bottom-7 left-7 bg-white/90 p-2 backdrop-blur-sm"><img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="h-9 w-28 object-cover object-center" /></div>
               </div>
             </Reveal>
           </div>

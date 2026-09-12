@@ -19,8 +19,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="nav-glass fixed inset-x-0 top-0 z-50 border-b border-[#e2e6e8]">
         <div className="page-wrap flex h-[78px] items-center justify-between">
           <Link href="/" data-testid="link-brand" className="group leading-none">
-            <span className="display-font block text-[13px] font-bold tracking-[.09em] text-[#202b34]">VERTICAL EXPRESS</span>
-            <span className="mono-font mt-1 block text-[8px] tracking-[.18em] text-[#6d777d]">ELEVATORS PVT. LTD.</span>
+            <img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="h-12 w-[132px] object-cover object-center sm:w-[154px]" />
           </Link>
           <nav className="hidden items-center gap-9 md:flex" aria-label="Primary navigation">
             {navItems.map((item) => (
@@ -55,6 +54,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="dark-panel mt-0">
         <div className="page-wrap grid gap-12 py-16 md:grid-cols-[1.2fr_.8fr_.8fr] md:py-20">
           <div>
+            <img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="mb-6 h-12 w-[148px] object-cover object-center" />
             <p className="display-font max-w-sm text-3xl font-semibold leading-[1.08]">Ascend Beyond Limits<span className="text-[#f4511e]">...</span></p>
             <p className="mono-font mt-6 text-[10px] uppercase tracking-[.16em] text-[#b8c1c6]">Installation | Maintenance | Services</p>
           </div>
