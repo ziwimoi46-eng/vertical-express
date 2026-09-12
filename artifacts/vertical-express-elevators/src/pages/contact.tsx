@@ -63,7 +63,7 @@ export function ContactPage() {
       <section className="bg-[#eef1f2] pt-[78px]">
         <div className="page-wrap grid gap-12 py-20 md:py-28 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
           <Reveal><p className="eyebrow">Vertical Express Elevators Pvt. Ltd.</p><h1 className="display-font mt-5 text-6xl font-semibold leading-[.92] tracking-[-.06em] text-[#202b34] sm:text-8xl">CONTACT<br /><span className="text-[#f4511e]">US.</span></h1><p className="mono-font mt-8 max-w-md text-[10px] uppercase tracking-[.16em] text-[#667279]">verticalexpresspvtltd@gmail.com</p></Reveal>
-          <Reveal className="reveal-delay-1"><div className="bg-white p-3 md:p-5"><img src={`${imageBase}IMG-20260912-WA0002_1789155975693.jpg`} alt="Bright commercial interior with vertical circulation" className="h-[370px] w-full object-cover sm:h-[500px]" /></div></Reveal>
+          <Reveal className="reveal-delay-1"><div className="bg-white p-3 md:p-5"><img src={`${imageBase}hospital-lift.webp`} alt="Hospital lift serving a clinical corridor" className="h-auto max-h-[500px] w-full object-contain" /></div></Reveal>
         </div>
       </section>
 

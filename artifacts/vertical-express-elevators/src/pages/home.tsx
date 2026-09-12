@@ -21,7 +21,7 @@ export function HomePage() {
             <Reveal className="relative">
               <div className="absolute -bottom-5 -left-5 hidden h-24 w-24 border-l border-b border-[#f4511e] md:block" />
               <div className="relative overflow-hidden bg-[#e8ecee] p-3 md:p-5">
-                <img src={`${imageBase}IMG-20260912-WA0011_1789155975552.jpg`} alt="Vertical Express Elevators elevator installation" className="hero-image aspect-[1.06] h-full w-full object-cover object-center" />
+                <img src={`${imageBase}home-hero.webp`} alt="Vertical Express Elevators premium elevator interior" className="hero-image h-auto max-h-[650px] w-full object-contain object-center" />
                 <div className="absolute bottom-7 left-7 bg-white/90 p-2 backdrop-blur-sm"><img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="h-9 w-28 object-cover object-center" /></div>
               </div>
             </Reveal>
@@ -50,7 +50,7 @@ export function HomePage() {
             {services.slice(0, 6).map(([name, image], index) => (
               <Reveal key={name} className={`service-card group reveal-delay-${(index % 3) + 1}`}>
                 <Link href="/services" data-testid={`card-home-service-${index}`} className="block">
-                  <div className="service-image relative aspect-[1.28] overflow-hidden bg-white"><img src={`${imageBase}${image}`} alt={name} className="h-full w-full object-cover" /></div>
+                  <div className="service-image relative flex min-h-[190px] items-center justify-center overflow-hidden bg-white p-4"><img src={`${imageBase}${image}`} alt={name} className="h-auto max-h-[220px] w-full object-contain" /></div>
                   <div className="flex items-center justify-between border-b border-[#d3dade] py-5"><h3 className="display-font text-lg font-semibold text-[#202b34]">{name}</h3><span className="service-arrow flex h-8 w-8 items-center justify-center border border-[#c5cfd4] text-[#202b34]"><ArrowUpRight size={15} /></span></div>
                 </Link>
               </Reveal>
@@ -63,8 +63,8 @@ export function HomePage() {
         <div className="page-wrap grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
           <Reveal><p className="eyebrow">03 / Vertical mobility</p><h2 className="display-font mt-5 max-w-md text-3xl font-semibold leading-[1.08] tracking-[-.04em] text-[#202b34] sm:text-5xl">Installation<br /><span className="text-[#f4511e]">Maintenance</span><br />Services</h2></Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
-            <ImageReveal src={`${imageBase}IMG-20260912-WA0007_1789155975641.jpg`} alt="Capsule lift installation" className="h-64 sm:h-80" />
-            <ImageReveal src={`${imageBase}IMG-20260912-WA0004_1789155975656.jpg`} alt="Car lift installation" className="h-64 sm:mt-14 sm:h-80" />
+            <ImageReveal src={`${imageBase}capsule-lift.jpg`} alt="Capsule lift installation" className="flex h-64 items-center sm:h-80" imageClassName="object-contain" />
+            <ImageReveal src={`${imageBase}car-lift.jpg`} alt="Car lift installation" className="flex h-64 items-center sm:mt-14 sm:h-80" imageClassName="object-contain" />
           </div>
         </div>
       </section>

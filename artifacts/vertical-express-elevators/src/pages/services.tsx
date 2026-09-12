@@ -17,10 +17,10 @@ export function ServicesPage() {
           <Reveal className="flex flex-col justify-between gap-5 border-b border-[#d3dade] pb-7 md:flex-row md:items-end"><div><p className="eyebrow">Services catalogue</p><h2 className="display-font mt-4 max-w-2xl text-3xl font-semibold tracking-[-.04em] text-[#202b34] sm:text-5xl">Installation <span className="text-[#f4511e]">|</span> Maintenance <span className="text-[#f4511e]">|</span> Services</h2></div><span className="mono-font text-[10px] uppercase tracking-[.16em] text-[#89949a]">09 elevator services</span></Reveal>
           <div className="mt-10">
             {services.map(([name, image], index) => (
-              <Reveal key={name} className={`catalogue-row group grid gap-6 py-6 md:grid-cols-[4rem_1fr_1.2fr_auto] md:items-center reveal-delay-${(index % 3) + 1}`}>
+              <Reveal key={name} className={`catalogue-row group grid gap-6 py-8 md:grid-cols-[4rem_minmax(14rem,.8fr)_minmax(14rem,1.2fr)_auto] md:items-center reveal-delay-${(index % 3) + 1}`}>
                 <span className="mono-font text-[10px] tracking-[.14em] text-[#f4511e]">{String(index + 1).padStart(2, '0')}</span>
                 <h3 className="display-font text-2xl font-semibold tracking-[-.03em] text-[#202b34] sm:text-3xl">{name}</h3>
-                <ImageReveal src={`${imageBase}${image}`} alt={name} className="h-40 w-full md:h-24" />
+                <ImageReveal src={`${imageBase}${image}`} alt={name} className="flex min-h-[170px] w-full max-w-md items-center justify-center md:min-h-[190px]" imageClassName="h-auto max-h-[240px] object-contain" />
                 <Link href="/contact" data-testid={`link-service-contact-${index}`} aria-label={`Contact us about ${name}`} className="arrow-link flex items-center gap-3 text-xs font-bold uppercase tracking-[.12em] text-[#202b34]">Enquire <ArrowUpRight size={17} className="text-[#f4511e]" /></Link>
               </Reveal>
             ))}

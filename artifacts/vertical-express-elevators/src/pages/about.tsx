@@ -17,7 +17,7 @@ export function AboutPage() {
       </section>
       <section className="bg-white py-16 md:py-28">
         <div className="page-wrap grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
-          <ImageReveal src={`${imageBase}IMG-20260912-WA0010_1789155975581.jpg`} alt="Elevator installation inside a glass building" className="h-[480px] md:h-[680px]" />
+          <ImageReveal src={`${imageBase}hydraulic-lift.jpg`} alt="Glass hydraulic elevator installation" className="flex min-h-[480px] items-center md:min-h-[680px]" imageClassName="object-contain" />
           <Reveal className="reveal-delay-1">
             <p className="eyebrow">About Company</p>
             <h2 className="display-font mt-5 text-3xl font-semibold leading-[1.08] tracking-[-.04em] text-[#202b34] sm:text-5xl">Elevating spaces,<br /><span className="text-[#f4511e]">connecting lives.</span></h2>
