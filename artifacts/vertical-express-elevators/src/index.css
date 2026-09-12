@@ -100,6 +100,7 @@
 .orange-rule { width: 42px; height: 2px; background: #ff8a3d; }
 .service-card:hover .service-image img { transform: scale(1.04); }
 .service-image img { transition: transform .6s ease; }
+.service-image-reveal img { display: block; width: 100% !important; height: auto !important; max-width: 100%; object-fit: contain !important; }
 .service-arrow { transition: transform .25s ease, background-color .25s ease, color .25s ease; }
 .service-card:hover .service-arrow { transform: translate(3px,-3px); background: hsl(var(--primary)); color: #fff; }
 .field-error { color: hsl(var(--destructive)); font-size: .74rem; margin-top: .4rem; }
