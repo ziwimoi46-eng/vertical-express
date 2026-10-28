@@ -1,11 +1,13 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type MouseEvent, type ReactNode } from 'react';
 import { Link, useLocation } from 'wouter';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 
-const navItems = [
+const navItems: Array<{ label: string; href: string; section?: string }> = [
   { label: 'Home', href: '/' },
   { label: 'About Company', href: '/about' },
   { label: 'Services', href: '/services' },
+  { label: 'Team', href: '/#team', section: 'team' },
+  { label: 'Gallery', href: '/#gallery', section: 'gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -13,17 +15,24 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [location]);
+  const handleSectionClick = (section: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (location === '/') {
+      event.preventDefault();
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setOpen(false);
+  };
 
   return (
     <div className="site-shell">
       <header className="nav-glass fixed inset-x-0 top-0 z-50 border-b border-[#e2e6e8]">
         <div className="page-wrap flex h-[78px] items-center justify-between">
           <Link href="/" data-testid="link-brand" className="group leading-none">
-            <img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="h-12 w-[132px] object-cover object-center sm:w-[154px]" />
+            <img src="/vee-assets/logos/vee-logo-dark.png" alt="Vertical Express Elevators Pvt. Ltd." className="h-12 w-[132px] object-contain object-left sm:w-[154px]" />
           </Link>
           <nav className="hidden items-center gap-9 md:flex" aria-label="Primary navigation">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} data-testid={`link-nav-${item.label.toLowerCase().replace(/\s/g, '-')}`} className={`relative py-2 mono-font text-[10px] uppercase tracking-[.14em] transition-colors hover:text-[#f4511e] ${location === item.href ? 'text-[#f4511e] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:bg-[#f4511e]' : 'text-[#6d777d]'}`}>
+              <Link key={item.href} href={item.href} onClick={item.section ? handleSectionClick(item.section) : undefined} data-testid={`link-nav-${item.label.toLowerCase().replace(/\s/g, '-')}`} className={`relative py-2 mono-font text-[10px] uppercase tracking-[.14em] transition-colors hover:text-[#f4511e] ${location === item.href ? 'text-[#f4511e] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:bg-[#f4511e]' : 'text-[#6d777d]'}`}>
                 {item.label}
               </Link>
             ))}
@@ -39,7 +48,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="border-t border-[#e2e6e8] bg-white px-8 py-7 md:hidden">
             <nav className="flex flex-col gap-5" aria-label="Mobile navigation">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} data-testid={`link-mobile-${item.label.toLowerCase().replace(/\s/g, '-')}`} className="display-font text-xl font-semibold text-[#202b34]">
+                <Link key={item.href} href={item.href} onClick={item.section ? handleSectionClick(item.section) : undefined} data-testid={`link-mobile-${item.label.toLowerCase().replace(/\s/g, '-')}`} className="display-font text-xl font-semibold text-[#202b34]">
                   {item.label}
                 </Link>
               ))}
@@ -54,14 +63,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="dark-panel mt-0">
         <div className="page-wrap grid gap-12 py-16 md:grid-cols-[1.2fr_.8fr_.8fr] md:py-20">
           <div>
-            <img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="mb-6 h-12 w-[148px] object-cover object-center" />
+            <img src="/vee-assets/logos/vee-logo-white.png" alt="Vertical Express Elevators Pvt. Ltd." className="mb-6 h-12 w-[148px] object-contain object-left" />
             <p className="display-font max-w-sm text-3xl font-semibold leading-[1.08]">Ascend Beyond Limits<span className="text-[#f4511e]">...</span></p>
             <p className="mono-font mt-6 text-[10px] uppercase tracking-[.16em] text-[#b8c1c6]">Installation | Maintenance | Services</p>
           </div>
           <div>
             <p className="eyebrow">Navigate</p>
             <div className="mt-5 flex flex-col gap-3">
-              {navItems.map((item) => <Link key={item.href} href={item.href} data-testid={`link-footer-${item.label.toLowerCase().replace(/\s/g, '-')}`} className="text-sm text-[#d9e0e3] transition-colors hover:text-[#f4511e]">{item.label}</Link>)}
+              {navItems.map((item) => <Link key={item.href} href={item.href} onClick={item.section ? handleSectionClick(item.section) : undefined} data-testid={`link-footer-${item.label.toLowerCase().replace(/\s/g, '-')}`} className="text-sm text-[#d9e0e3] transition-colors hover:text-[#f4511e]">{item.label}</Link>)}
             </div>
           </div>
           <div>

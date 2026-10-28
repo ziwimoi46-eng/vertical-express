@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'wouter';
-import { ImageReveal, Reveal } from '@/components/reveal';
-import { imageBase, services } from '@/lib/site-data';
+import { Reveal } from '@/components/reveal';
+import { TeamAndGallery } from '@/components/team-and-gallery';
+import { imageBase, services, veeAssetsBase } from '@/lib/site-data';
 
 export function HomePage() {
   useEffect(() => { document.title = 'Vertical Express Elevators | Ascend Beyond Limits'; }, []);
@@ -22,7 +23,7 @@ export function HomePage() {
               <div className="absolute -bottom-5 -left-5 hidden h-24 w-24 border-l border-b border-[#f4511e] md:block" />
               <div className="relative overflow-hidden bg-[#e8ecee] p-3 md:p-5">
                 <img src={`${imageBase}home-hero.webp`} alt="Vertical Express Elevators premium elevator interior" className="hero-image h-auto max-h-[650px] w-full object-contain object-center" />
-                <div className="absolute bottom-7 left-7 bg-white/90 p-2 backdrop-blur-sm"><img src="/images/official-logo.png" alt="Vertical Express Elevators Pvt. Ltd." className="h-9 w-28 object-cover object-center" /></div>
+                <div className="absolute bottom-7 left-7"><img src={`${veeAssetsBase}logos/vee-logo-dark.png`} alt="Vertical Express Elevators Pvt. Ltd." className="h-9 w-28 object-contain object-left" /></div>
               </div>
             </Reveal>
           </div>
@@ -47,10 +48,10 @@ export function HomePage() {
             <Link href="/services" data-testid="link-home-all-services" className="arrow-link inline-flex items-center gap-3 pb-1 text-xs font-bold uppercase tracking-[.12em] text-[#202b34]">View all services <ArrowUpRight size={16} className="text-[#f4511e]" /></Link>
           </Reveal>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map(([name, image], index) => (
+            {services.slice(0, 6).map(({ name, image, objectPosition }, index) => (
               <Reveal key={name} className={`service-card group reveal-delay-${(index % 3) + 1}`}>
                 <Link href="/services" data-testid={`card-home-service-${index}`} className="block">
-                  <div className="service-image relative flex min-h-[190px] items-center justify-center overflow-hidden bg-white p-4"><img src={`${imageBase}${image}`} alt={name} className="h-auto max-h-[220px] w-full object-contain" /></div>
+                  <div className="service-image relative aspect-[1.28] overflow-hidden"><img src={`${veeAssetsBase}${image}`} alt={name} className={`block h-full w-full object-cover ${objectPosition === 'top' ? 'object-top' : 'object-center'}`} /></div>
                   <div className="flex items-center justify-between border-b border-[#d3dade] py-5"><h3 className="display-font text-lg font-semibold text-[#202b34]">{name}</h3><span className="service-arrow flex h-8 w-8 items-center justify-center border border-[#c5cfd4] text-[#202b34]"><ArrowUpRight size={15} /></span></div>
                 </Link>
               </Reveal>
@@ -59,19 +60,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
-        <div className="page-wrap grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
-          <Reveal><p className="eyebrow">03 / Vertical mobility</p><h2 className="display-font mt-5 max-w-md text-3xl font-semibold leading-[1.08] tracking-[-.04em] text-[#202b34] sm:text-5xl">Installation<br /><span className="text-[#f4511e]">Maintenance</span><br />Services</h2></Reveal>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <ImageReveal src={`${imageBase}capsule-lift.jpg`} alt="Capsule lift installation" className="flex h-64 items-center sm:h-80" imageClassName="object-contain" />
-            <ImageReveal src={`${imageBase}car-lift.jpg`} alt="Car lift installation" className="flex h-64 items-center sm:mt-14 sm:h-80" imageClassName="object-contain" />
-          </div>
-        </div>
-      </section>
-
-      <section className="dark-panel py-20 md:py-28">
-        <div className="page-wrap grid gap-10 md:grid-cols-[1fr_auto] md:items-end"><Reveal><p className="eyebrow">04 / Contact Us</p><h2 className="display-font mt-5 max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-.04em] sm:text-6xl">Contact <span className="text-[#f4511e]">us.</span></h2></Reveal><Reveal className="reveal-delay-1"><Link href="/contact" data-testid="link-home-contact" className="group inline-flex items-center gap-5 bg-[#f4511e] px-6 py-5 text-xs font-bold uppercase tracking-[.12em] text-white transition-colors hover:bg-[#d94113]">Contact us <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></Link></Reveal></div>
-      </section>
+      <TeamAndGallery />
     </>
   );
 }

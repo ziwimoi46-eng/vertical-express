@@ -6,8 +6,8 @@ import { imageBase } from '@/lib/site-data';
 type DeliveryMethod = 'whatsapp' | 'email' | 'both';
 
 const whatsappNumbers = [
-  { label: 'Mohammed Shoeb', display: '+91 904 9887 338', value: '919049887338' },
-  { label: 'Tafazzul Quazi', display: '+91 915 8806 878', value: '919158806878' },
+  { label: 'Mohd Shoeb', display: '+91 744 7440 374', value: '917447440374' },
+  { label: 'Quazi Tafazzuluddin', display: '+91 744 7443 974', value: '917447443974' },
 ];
 
 export function ContactPage() {
@@ -72,8 +72,8 @@ export function ContactPage() {
           <Reveal>
             <p className="eyebrow">Direct lines</p>
             <div className="mt-8 space-y-8">
-              <div><p className="display-font text-xl font-semibold text-[#202b34]">Mohammed Shoeb</p><p className="mono-font mt-1 text-[10px] uppercase tracking-[.14em] text-[#89949a]">Director</p><a href="tel:+919049887338" data-testid="link-phone-mohammed" className="mt-3 flex items-center gap-2 text-sm text-[#f4511e]"><Phone size={15} /> +91 904 9887 338</a></div>
-              <div><p className="display-font text-xl font-semibold text-[#202b34]">Tafazzul Quazi</p><p className="mono-font mt-1 text-[10px] uppercase tracking-[.14em] text-[#89949a]">Director</p><a href="tel:+919158806878" data-testid="link-phone-tafazzul" className="mt-3 flex items-center gap-2 text-sm text-[#f4511e]"><Phone size={15} /> +91 915 8806 878</a></div>
+              <div><p className="display-font text-xl font-semibold text-[#202b34]">Mohd Shoeb</p><p className="mono-font mt-1 text-[10px] uppercase tracking-[.14em] text-[#89949a]">Director</p><a href="tel:+917447440374" data-testid="link-phone-shoeb" className="mt-3 flex items-center gap-2 text-sm text-[#f4511e]"><Phone size={15} /> +91 744 7440 374</a></div>
+              <div><p className="display-font text-xl font-semibold text-[#202b34]">Quazi Tafazzuluddin</p><p className="mono-font mt-1 text-[10px] uppercase tracking-[.14em] text-[#89949a]">Director</p><a href="tel:+917447443974" data-testid="link-phone-quazi" className="mt-3 flex items-center gap-2 text-sm text-[#f4511e]"><Phone size={15} /> +91 744 7443 974</a></div>
               <div className="border-t border-[#d8dee1] pt-7"><a href="mailto:verticalexpresspvtltd@gmail.com" data-testid="link-email" className="flex items-start gap-3 text-sm leading-6 text-[#202b34]"><Mail size={16} className="mt-1 shrink-0 text-[#f4511e]" />verticalexpresspvtltd@gmail.com</a><p data-testid="text-address" className="mt-5 flex items-start gap-3 text-sm leading-6 text-[#667279]"><MapPin size={16} className="mt-1 shrink-0 text-[#f4511e]" />Plot No. 24, Arif Colony,<br />Near Aamkhas Ground,<br />Aurangabad - 431001 (M.H)</p></div>
             </div>
           </Reveal>

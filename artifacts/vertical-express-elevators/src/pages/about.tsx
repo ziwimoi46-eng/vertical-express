@@ -22,7 +22,10 @@ export function AboutPage() {
             <p className="eyebrow">About Company</p>
             <h2 className="display-font mt-5 text-3xl font-semibold leading-[1.08] tracking-[-.04em] text-[#202b34] sm:text-5xl">Elevating spaces,<br /><span className="text-[#f4511e]">connecting lives.</span></h2>
             <p className="mt-7 max-w-2xl text-[15px] leading-8 text-[#667279]">At Vertical Express Elevators, we’re more than just a transportation solution – we’re your gateway to seamless vertical mobility. With a relentless commitment to innovation, safety, and efficiency, we redefine vertical transportation experiences. Our cutting-edge elevator systems combine state-of-the-art technology with exceptional design, ensuring both reliability and aesthetics. With a focus on sustainability, we’re dedicated to shaping the future of urban connectivity. Elevate your spaces with Vertical Express Elevators and journey upwards with confidence.</p>
-            <Link href="/contact" data-testid="link-about-contact" className="arrow-link mt-9 inline-flex items-center gap-3 border-b border-[#f4511e] pb-3 text-xs font-bold uppercase tracking-[.12em] text-[#202b34]">Contact us <ArrowUpRight size={16} className="text-[#f4511e]" /></Link>
+            <div className="mt-7 flex flex-col items-start gap-9">
+              <a href="/vee-assets/docs/ISO-9001-Certificate.pdf" target="_blank" rel="noopener" className="arrow-link inline-flex items-center gap-3 border-b border-[#f4511e] pb-3 text-xs font-bold uppercase tracking-[.12em] text-[#202b34]">ISO 9001:2015 Certified <ArrowUpRight size={16} className="text-[#f4511e]" /></a>
+              <Link href="/contact" data-testid="link-about-contact" className="arrow-link inline-flex items-center gap-3 border-b border-[#f4511e] pb-3 text-xs font-bold uppercase tracking-[.12em] text-[#202b34]">Contact us <ArrowUpRight size={16} className="text-[#f4511e]" /></Link>
+            </div>
           </Reveal>
         </div>
       </section>

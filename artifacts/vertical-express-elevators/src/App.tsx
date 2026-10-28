@@ -21,7 +21,14 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
 function Router() {
   const [location] = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const targetId = window.location.hash.slice(1);
+    if (targetId === 'team' || targetId === 'gallery') {
+      requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }, [location]);
   return (
     <RoutedErrorBoundary>
