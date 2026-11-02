@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'wouter';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Instagram, Menu, X } from 'lucide-react';
 
 const navItems: Array<{ label: string; href: string }> = [
   { label: 'Home', href: '/' },
@@ -94,6 +94,15 @@ export function SiteShell({ children }: { children: ReactNode }) {
               Beed Bypass, Chhatrapati Sambhajinagar,<br />
               Maharashtra - 431001
             </p>
+            <a
+              href="https://www.instagram.com/verticalexpresselevatorspvtltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="mt-4 inline-flex items-center text-[#d9e0e3] transition-colors hover:text-[#f4511e]"
+            >
+              <Instagram size={20} />
+            </a>
           </div>
         </div>
         <div className="border-t border-[#3d4b55]">
