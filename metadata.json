@@ -1,0 +1,6 @@
+{
+  "name": "Vertical Express Elevators",
+  "description": "Showcase and inquiry platform for Vertical Express Elevators, an ISO 9001 certified elevator and vertical mobility engineering company.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
